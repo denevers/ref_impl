@@ -1,0 +1,14 @@
+= Geoserver configuration
+
+Eric Boisvert <eric.boisvert@nrcan-rncan.gc.ca>
+:description suggested elements for configuration
+
+
+== Use of property interpolation
+
+see: https://docs.geoserver.org/latest/en/user/data/app-schema/property-interpolation.html
+
+URL that self reference the service itself
+
+
+USE embedded NGINX ?

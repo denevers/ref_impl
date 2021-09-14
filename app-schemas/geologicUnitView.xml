@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<as:AppSchemaDataAccess
+xmlns:as="http://www.geotools.org/app-schema"
+xmlns:ogc="http://www.opengis.net/ogc"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.geotools.org/app-schema
+http://ogc.bgs.ac.uk/mapping/AppSchemaDataAccess.xsd">
+<namespaces>
+  <Namespace>
+    <prefix>gsmlp</prefix>
+    <uri>http://www.opengis.net/gsml/4.1/geosciml-lite</uri>
+  </Namespace>
+  <Namespace>
+    <prefix>gml</prefix>
+    <uri>http://www.opengis.net/gml</uri>
+  </Namespace>
+</namespaces>
+<sourceDataStores>
+  <DataStore>
+    <id>geopackage</id>
+    <parameters>
+      <Parameter>
+        <name>url</name>
+        <value>
+          geo_iugs2.gpkg
+        </value>
+      </Parameter>
+      <Parameter>
+        <name>memory mapped buffer</name>
+        <value>false</value>
+      </Parameter>
+      <Parameter>
+        <name>create spatial index</name>
+        <value>true</value>
+      </Parameter>
+      <Parameter>
+        <name>charset</name>
+        <value>UTF-8</value>
+      </Parameter>
+    </parameters>
+  </DataStore>
+</sourceDataStores>
+<targetTypes>
+  <FeatureType>
+    <schemaUri>
+      http://schemas.usgin.org/files/geologic-units/2.0/GeoSciML.xsd
+    </schemaUri>
+  </FeatureType>
+</targetTypes>
+<typeMappings>
+  <FeatureTypeMapping>
+    <sourceDataStore>geopackage</sourceDataStore>
+    <sourceType>GeologicUnitView</sourceType>
+    <targetElement>gsmlp:GeologicUnitView</targetElement>
+    <attributeMappings>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:GeologicUnitView</targetAttribute>
+        <idExpression>
+          <OCQL>fid</OCQL>
+        </idExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:identifier</targetAttribute>
+        <sourceExpression>
+          <OCQL>identifier</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:name</targetAttribute>
+        <sourceExpression>
+          <OCQL>name</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:description</targetAttribute>
+        <sourceExpression>
+          <OCQL>description</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:geologicUnitType</targetAttribute>
+        <sourceExpression>
+          <OCQL>geologicUnitType</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:rank</targetAttribute>
+        <sourceExpression>
+          <OCQL>rank</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:lithology</targetAttribute>
+        <sourceExpression>
+          <OCQL>lithology</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:geologicHistory</targetAttribute>
+        <sourceExpression>
+          <OCQL>geologicHistory</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:observationMethod</targetAttribute>
+        <sourceExpression>
+          <OCQL>observationMethod</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:positionalAccuracy</targetAttribute>
+        <sourceExpression>
+          <OCQL>positionalAccuracy</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:source</targetAttribute>
+        <sourceExpression>
+          <OCQL>source</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:geologicUnitType_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>geologicUnitType_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:representativeLithology_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>representativeLithology_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:representativeAge_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>representativeAge_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:representativeOlderAge_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>representativeOlderAge_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:representativeYoungerAge_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>representativeYoungerAge_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:specification_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>specification_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:metadata_uri</targetAttribute>
+        <sourceExpression>
+          <OCQL>metadata_uri</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:genericSymbolizer</targetAttribute>
+        <sourceExpression>
+          <OCQL>genericSymbolizer</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+      <AttributeMapping>
+        <targetAttribute>gsmlp:shape</targetAttribute>
+        <sourceExpression>
+          <OCQL>geom</OCQL>
+        </sourceExpression>
+      </AttributeMapping>
+    </attributeMappings>
+  </FeatureTypeMapping>
+</typeMappings>
+</as:AppSchemaDataAccess>
